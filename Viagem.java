@@ -1,23 +1,27 @@
 
 public class Viagem {
     private double distancia, valor;
+    private Cliente cliente;
 
-    public Viagem(double distancia) {
+    public Viagem(double distancia, Cliente cliente){ 
         this.distancia = distancia;
-        
+        this.cliente = cliente;
     }
 
-    public double calcTarifaNormal(Item item){
-        this.valor = distancia * 2; 
-        this.valor += (item.getPeso() == (int) item.getPeso() ) ? (int) item.getPeso() : (int) item.getPeso() + 1; 
-        if(item.isSensTemp()){
+    public double calcTarifaNormal(Cliente cl){
+        this.valor = this.distancia * 2; 
+        this.valor += (cl.getItem().getPeso() == (int) cl.getItem().getPeso() ) ? (int) cl.getItem().getPeso() : (int) cl.getItem().getPeso() + 1; 
+        if(cl.getItem().isSensTemp()){
             this.valor += 10;
         }
-        if(item.isUrgente()){
+        if(cl.getItem().isUrgente()){
             this.valor += 10; 
         }
         return this.valor;
     }
 
-    
+    public Veiculo setVeiculo(){
+       // criar a estrutura if else para definir o veiculo conforme as informacoes do item do cliente 
+    }
+
 }
