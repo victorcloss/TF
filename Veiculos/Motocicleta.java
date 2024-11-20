@@ -1,3 +1,6 @@
+import Veiculo;
+
+package Veiculos;
 public class Motocicleta extends Veiculo {
     private double volumeMax, pesoMax;
     private boolean sensTemp;

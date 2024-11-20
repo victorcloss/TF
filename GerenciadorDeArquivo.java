@@ -7,9 +7,9 @@ public class GerenciadorDeArquivo {
     
     public GerenciadorDeArquivo() throws IOException {
             this.writer = new BufferedWriter(new FileWriter("Registro.csv"));
-    }
+        }
     
-    public void escrever(String txt){
+    public void escreverNoArquivo(String txt){
         try {
             writer.write("\n"+txt);
             writer.newLine();
@@ -18,4 +18,6 @@ public class GerenciadorDeArquivo {
             e.printStackTrace();
         }
     }
+
+    public void 
 }
