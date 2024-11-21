@@ -1,13 +1,13 @@
 
 public class Cliente {
     private String nome;
-    private int nroContato;
+    private String nroContato;
     private Item item;
 
-    public Cliente(String nome, int nroContato, Item item) {
+    public Cliente(String nome, String nroContato) {
         this.nome = nome;
         this.nroContato = nroContato;
-        this.item = item;
+
     }
 
     public String getNome() {
@@ -18,4 +18,11 @@ public class Cliente {
         return item;
     }
 
+    public void setItem(Item i){
+        this.item = i;
+    }
+
+    public String getNroContato() {
+        return nroContato;
+    }
 }

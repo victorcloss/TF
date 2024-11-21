@@ -7,6 +7,7 @@ public class TelaCadastroVeiculo{
 
     private ArrayList<Item> duasLista;
 
+    private JFrame frame;
     private JTextArea tfDesc;
     private JTextField pfPeso;
     private JTextField tfVol;
@@ -21,8 +22,8 @@ public class TelaCadastroVeiculo{
     public TelaCadastroVeiculo(){
         this.duasLista = new ArrayList<>();        
 
-        JFrame frame = new JFrame("Detalhes do Veiculo");
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame = new JFrame("Detalhes do Veiculo");
+        frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
     
         JPanel linha1 = new JPanel(new FlowLayout(FlowLayout.LEADING));
         linha1.setAlignmentY(java.awt.Component.TOP_ALIGNMENT);
@@ -118,12 +119,7 @@ public class TelaCadastroVeiculo{
         
         
 
-        btImprime.addActionListener(e -> {
-
-            for(Cliente c : duasLista )
-                System.out.println(c);
-
-        });
+        
 
 
         
@@ -146,7 +142,10 @@ public class TelaCadastroVeiculo{
         frame.pack();
 
         frame.setLocationRelativeTo(null);
-        frame.setVisible(true);
+        frame.setVisible(false);
         }
-
+    
+    public void show(){
+        frame.setVisible(true);
+    }
 }

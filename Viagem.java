@@ -20,8 +20,6 @@ public class Viagem {
         return this.valor;
     }
 
-    public Veiculo setVeiculo(){
-       // criar a estrutura if else para definir o veiculo conforme as informacoes do item do cliente 
-    }
+    
 
 }

@@ -6,7 +6,10 @@ import javax.swing.*;
 import javax.swing.border.Border;
 
 public class TelaPrincipal extends JFrame{
-    JFrame princ;
+    private JFrame princ;
+    private TelaSolicitarViagem tsv;
+    private TelaCadastroVeiculo tcv;
+    private TelaCadastroCliente tcc;
 
     public TelaPrincipal(){
         inicializar();
@@ -14,6 +17,10 @@ public class TelaPrincipal extends JFrame{
     
     private void inicializar(){
         princ = new JFrame();
+        tsv = new TelaSolicitarViagem();
+        tcv = new TelaCadastroVeiculo();
+        tcc = new TelaCadastroCliente();
+
         princ.setLocationRelativeTo(null);
         princ.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         princ.setLayout(new BorderLayout(10,5));
@@ -36,13 +43,40 @@ public class TelaPrincipal extends JFrame{
         
         JPanel panel2 = new JPanel();
         panel2.setLayout(new FlowLayout(FlowLayout.CENTER, 10, 5));
-        Button salvar = new Button("Salvar Dados");
+        JButton salvar = new JButton("Salvar Dados");
         panel2.add(salvar);
-        Button carregar = new Button("Carregar Dados");
+        JButton carregar = new JButton("Carregar Dados");
         panel2.add(carregar);
         princ.add(panel2, BorderLayout.SOUTH);
 
-        princ.setVisible(true);
+         
+        // DefaultListModel<String> listModel = new DefaultListModel<>();
+        // listModel.addElement("Item 1");
+        // listModel.addElement("Item 2");
+        // listModel.addElement("Item 3");
+        // JList<String> list = new JList<>(listModel);
+        // list.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+        // JScrollPane listScrollPane = new JScrollPane(list);
+        // princ.add(listScrollPane, BorderLayout.CENTER);
+        princ.setVisible(true); 
         
+    // ActionListener Area
+        cc.addActionListener(e ->{
+            tcc.show();
+        });
+
+        cv.addActionListener(e -> {
+            tcv.show();
+        });
+
+        pt.addActionListener(e ->{
+            tsv.show();
+        });
+        cv2.addActionListener(e->{
+            
+        });
+        cdi.addActionListener(e->{
+
+        });
     }
 }
